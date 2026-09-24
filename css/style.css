@@ -1,10 +1,4 @@
 
-:root{
-    --nav:#1E293B;
-    --main:
-}
-
-
 *{
     margin: 0px;
     padding: 0px;
@@ -101,12 +95,17 @@ form button:hover{
     margin-right: 20px;
 }
 
-/*=======================DASHBOARD======================================*/
+@media (max-width: 765px) {
 
-/* .dashboard{
-    display: flex;
-    min-height: 100vh;
-} */
+    .container-form{
+        width:fit-content;
+        margin: 0px 10px 0px 10px;
+}
+
+    
+}
+
+/*=======================DASHBOARD======================================*/
 
 .dashboard{
     display: grid;
@@ -131,6 +130,9 @@ form button:hover{
     justify-content: space-between;
     padding: 20px;
     align-items: center;
+    position: sticky;
+    top: 0px;
+    background-color: white;
 }
 
 .contenido-inicial div{
@@ -151,6 +153,7 @@ form button:hover{
     align-items: center;
     justify-content: center;
 }
+
 
 nav{
     grid-area: nav;
@@ -213,6 +216,7 @@ nav a:hover{
     margin-top: 30%;
 }
 
+
 main{
     grid-area: main;
     flex-grow: 1;
@@ -227,8 +231,8 @@ main{
 }
 
 .contenido button{
-     background-color: rgb(36, 36, 226); 
-     border: none;
+    background-color: rgb(36, 36, 226); 
+    border: none;
     color: white;  
     width: 15%;
     font-weight: bold;
@@ -329,7 +333,11 @@ footer{
     
 }
 
- @media (max-width: 900px) {
+.menu-checkbox{
+    display: none;
+}
+
+ @media (max-width: 765px) {
 
     .dashboard{
     display: grid;
@@ -341,11 +349,15 @@ footer{
     "footer";
     }
 
+    .contenido{
+        display: block;
+    }
+
     nav{
     display: none;
     }
     
-    .contenido{
+    header:has(.menu-checkbox:checked) + nav{
         display: block;
     }
 
@@ -353,24 +365,24 @@ footer{
     width: 20%;
     height: 40px;
     margin-top: 20px;
+    width:fit-content;
+    padding:10px;
     }
 
-    .menu::before{
+     .menu::before{
         content: "☰";
         margin-right: 20px;
     }
 
-    header:focus-within + nav {
+     /* header:focus-within + nav {
         display: block;
-    }
+    }*/
 
      nav{
         position: fixed;
-        top: 8.7%;
+        top: 8.6%;
         z-index: 1000;
-        
-    }
-
+    }  
 
     footer p{
         text-align: center;
