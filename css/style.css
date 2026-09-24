@@ -133,6 +133,7 @@ form button:hover{
     position: sticky;
     top: 0px;
     background-color: white;
+    z-index:1000;
 }
 
 .contenido-inicial div{
